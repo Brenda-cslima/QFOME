@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QFome - README Geral
 
-## Getting Started
+Projeto academico (ADS) com frontend em Next.js e backend em Spring Boot.
 
-First, run the development server:
+## Estrutura do projeto
+- `src/`: frontend (Next.js)
+- `qfome-backend/`: backend (Spring Boot)
+- `documentacao/`: anotacoes e andamento do projeto
 
+## Stack usada
+- Frontend: Next.js, TypeScript
+- Backend: Java 21, Spring Boot, Spring Web, Spring Data JPA, Actuator
+- Banco: H2 local (arquivo)
+
+## Como rodar o projeto
+
+### Frontend
+Na raiz `qfome-frontend`:
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Frontend em `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend
+Na pasta `qfome-backend`:
+```bash
+mvnw.cmd spring-boot:run
+```
+Backend em `http://localhost:8080`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Endpoints backend existentes hoje
+- `GET /actuator/health`
+- `POST /auth/register`
+- `POST /auth/login`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuracoes importantes
+- Backend config: `qfome-backend/src/main/resources/application.yml`
+- Variaveis exemplo: `qfome-backend/.env.example`
+- H2 console: `http://localhost:8080/h2-console`
 
-## Learn More
+## Status resumido das tasks (backend)
+- Infra/Config: base pronta
+- Modelos/Repositorios: base pronta
+- Login/Cadastro: base simples pronta
+- Catalogo: pendente
+- Carrinho: pendente
+- Checkout/Pedido: pendente
+- Historico/Acompanhamento: pendente
+- Postman/README fluxo completo: pendente
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Documentacao complementar
+- Andamento geral: `documentacao/andamento-projeto-2026-03-23.md`
+- Riscos e mitigacao: `documentacao/riscos-e-mitigacao.md`
